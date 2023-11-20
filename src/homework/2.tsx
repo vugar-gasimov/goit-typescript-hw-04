@@ -41,11 +41,11 @@ export function RequestComponent() {
 
   const startRequest = () => {
     requestDispatch({ type: "START_REQUEST" });
-    // Імітуємо запит до сервера
+    // We simulate a request to the server
 
     setTimeout(() => {
       requestDispatch({ type: "PENDING_REQUEST" });
-      // Імітуємо отримання відповіді від сервера
+      // We simulate receiving a response from the server
 
       setTimeout(() => {
         requestDispatch({ type: "FINISH_REQUEST" });
@@ -59,9 +59,9 @@ export function RequestComponent() {
 
   return (
     <div>
-      <button onClick={startRequest}>Почати запит</button>
-      <button onClick={resetRequest}>Скинути запит</button>
-      <p>Стан запиту: {requestState.requestStep}</p>
+      <button onClick={startRequest}>Start Request</button>
+      <button onClick={resetRequest}>Reset Request</button>
+      <p>Request State: {requestState.requestStep}</p>
     </div>
   );
 }
